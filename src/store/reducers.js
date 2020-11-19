@@ -1,8 +1,9 @@
 import { combineReducers } from "redux";
+import productReducer from "./product/reducer";
 
 const initialStore = {};
 
-const reducer = (store = initialStore, action) => {
+const appReducer = (store = initialStore, action) => {
   switch (action.type) {
     default:
       return store;
@@ -10,5 +11,6 @@ const reducer = (store = initialStore, action) => {
 };
 
 export default combineReducers({
-  app: reducer,
+  app: appReducer,
+  product: productReducer,
 });
