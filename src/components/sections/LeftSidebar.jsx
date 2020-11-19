@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function (props) {
+function LeftSidebar(props) {
   const { name } = props;
   return (
     <div className="card">
@@ -21,3 +21,5 @@ export default function (props) {
     </div>
   );
 }
+
+export default LeftSidebar;

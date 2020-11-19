@@ -4,14 +4,14 @@ import LeftSidebar from "../../containers/LeftSidebar";
 import TopBar from "../sections/TopBar";
 
 function BaseLayoute(props) {
-  const { children, header, footer, sidebar } = props;
+  const { children } = props;
   return (
     <div>
-      <TopBar/>
+      <TopBar />
       <main className="container">
         <div className="row mt-3">
           <div className="col-lg-3">
-            <LeftSidebar/>
+            <LeftSidebar />
           </div>
           <div className="col-lg-9">{children}</div>
         </div>
