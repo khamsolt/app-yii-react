@@ -14,7 +14,7 @@ const loaded = (payload) => ({
   payload,
 });
 
-export const fetch = () => async (dispatch, getStore) => {
+export const load = () => async (dispatch, getStore) => {
   dispatch(status("loading"));
   try {
     const { data } = await product.getProducts();

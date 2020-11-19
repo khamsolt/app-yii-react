@@ -6,8 +6,7 @@ const API = axios.create({
   baseURL: baseURL,
   headers: {
     Accept: "application/json",
-    "Content-Type": "Json",
-    Autorization: "Bearer",
+    "Content-Type": "application/json",
   },
   withCredentials: false,
 });
@@ -25,23 +24,25 @@ const product = {
 };
 
 const order = {
-  async create(productId) {
+  async create(productIds) {
     let data = {
-      data: {
-        productId,
-      },
+      productIds,
     };
     return await API.post("/order/create", data);
   },
 
-  async pai(orderId, sumPrice) {
+  async payment(orderId, sumPrice) {
     let data = {
-      data: {
-        orderId,
-        sumPrice,
-      },
+      orderId,
+      sumPrice,
     };
-    return await API.post("/order/pai", data);
+    return await API.post("/order/pay", data);
+  },
+
+  async getOrders() {
+    return await API.post(
+      "order/items?fields=id,customer_id,status&expand=products"
+    );
   },
 };
 
